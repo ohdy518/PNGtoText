@@ -22,5 +22,6 @@ func main() {
 
 	imageHandler.SetRGBArrayFromFile(file)
 
-	locator.GetInitIndex()
+	locator.GetInitTerminalIndex()
+	locator.SetITSliceFromITIndex()
 }

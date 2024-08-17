@@ -8,6 +8,13 @@ import (
 
 var RGBArray []color.RGBA
 
+type ImageDimension struct {
+	Width  int
+	Height int
+}
+
+var Dimension ImageDimension
+
 func SetRGBArrayFromFile(file *os.File) {
 	img, err := png.Decode(file)
 	if err != nil {
@@ -17,6 +24,8 @@ func SetRGBArrayFromFile(file *os.File) {
 
 	// Iterate over every pixel in the image
 	bounds := img.Bounds()
+	Dimension.Width = bounds.Dx()
+	Dimension.Height = bounds.Dy()
 	for y := bounds.Min.Y; y < bounds.Max.Y; y++ {
 		for x := bounds.Min.X; x < bounds.Max.X; x++ {
 			// Get the color of the pixel
