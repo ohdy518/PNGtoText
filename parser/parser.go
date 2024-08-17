@@ -8,7 +8,6 @@ import (
 
 func Parse(parseData []color.RGBA) {
 	var binConcat string = concat(parseData)
-	fmt.Println(binConcat)
 	var result, err = common.BinaryStringToText(binConcat)
 	if err != nil {
 		panic(err)

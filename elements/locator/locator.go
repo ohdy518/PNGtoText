@@ -25,14 +25,10 @@ func GetInitTerminalIndex() {
 
 	// Do not comment the code below.
 
-	fmt.Println(initIndex)
-	fmt.Println(terminalIndex)
-
 }
 
 func SetITSliceFromITIndex() {
 	ITSlice = imageHandler.RGBArray[initIndex:terminalIndex]
-	fmt.Println(ITSlice)
 }
 
 func getIndex(index int) int64 {
