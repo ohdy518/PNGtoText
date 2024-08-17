@@ -14,4 +14,4 @@ See texts hidden in the image.
 There is a message hidden in this image.
 
 
-Download and run it to see the text. 
+Build and run it to see the text. 
