@@ -49,5 +49,41 @@ func ConcatenateFromRGB(rgba color.RGBA) string {
 	locatorRGBBin.RBin = fmt.Sprintf("%08b", locator.R)
 	locatorRGBBin.GBin = fmt.Sprintf("%08b", locator.G)
 	locatorRGBBin.BBin = fmt.Sprintf("%08b", locator.B)
-	return locatorRGBBin.RBin + locatorRGBBin.GBin + locatorRGBBin.BBin
+	var r string
+	if locatorRGBBin.RBin != "00000000" {
+		r += locatorRGBBin.RBin
+	}
+	if locatorRGBBin.GBin != "00000000" {
+		r += locatorRGBBin.GBin
+	}
+	if locatorRGBBin.BBin != "00000000" {
+		r += locatorRGBBin.BBin
+	}
+	return r
+	//return locatorRGBBin.RBin + locatorRGBBin.GBin + locatorRGBBin.BBin
+}
+
+func BinaryToDecimals(binaryStr string) []int {
+	var decimals []int
+	for i := 0; i < len(binaryStr); i += 8 {
+		byteStr := binaryStr[i : i+8]
+		decimal, err := strconv.ParseInt(byteStr, 2, 64)
+		if err != nil {
+			fmt.Println("Error:", err)
+			continue
+		}
+		decimals = append(decimals, int(decimal))
+	}
+	return decimals
+}
+
+func FormatDecimals(decimals []int) string {
+	var result strings.Builder
+	for i, decimal := range decimals {
+		if i > 0 && i%3 == 0 {
+			result.WriteString("\n")
+		}
+		result.WriteString(fmt.Sprintf("%d ", decimal))
+	}
+	return strings.TrimSpace(result.String()) // Trim any trailing spaces or newlines
 }

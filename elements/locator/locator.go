@@ -21,7 +21,7 @@ func GetInitTerminalIndex() {
 	// Comment the code below to use function normally.
 
 	initIndex = 20
-	terminalIndex = 22
+	terminalIndex = 25
 
 	// Do not comment the code below.
 
