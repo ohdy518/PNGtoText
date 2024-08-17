@@ -12,3 +12,6 @@ See texts hidden in the image.
 
 ![image](./test/this.png)
 There is a message hidden in this image.
+
+
+Download and run it to see the text. 
