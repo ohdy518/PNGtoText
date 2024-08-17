@@ -19,7 +19,7 @@ func main() {
 	}
 
 	// Open the PNG file
-	file, err := os.Open("./test/redblueflag.png")
+	file, err := os.Open("./test/this.png")
 	if err != nil {
 		panic(err)
 		return
@@ -41,7 +41,7 @@ func main() {
 }
 
 func debug() {
-	var r = common.TextToBinaryString("Hello, world!")
+	var r = common.TextToBinaryString("[REDACTED]")
 	decimals := common.BinaryToDecimals(r)
 	formattedOutput := common.FormatDecimals(decimals)
 	fmt.Println(formattedOutput)

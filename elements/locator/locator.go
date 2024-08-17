@@ -20,8 +20,8 @@ func GetInitTerminalIndex() {
 	// Debug override;
 	// Comment the code below to use function normally.
 
-	initIndex = 20
-	terminalIndex = 25
+	//initIndex = 20
+	//terminalIndex = 25
 
 	// Do not comment the code below.
 
